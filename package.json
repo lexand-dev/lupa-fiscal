@@ -1,0 +1,39 @@
+{
+  "name": "lupa-fiscal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Radar ciudadano de obras públicas paralizadas y señales de riesgo en sus contrataciones (Perú).",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "etl": "node etl/etl_ocds.mjs",
+    "seed": "node etl/build_seed.mjs",
+    "db:setup": "node etl/db_setup.mjs"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "next": "14.2.18",
+    "pg": "^8.13.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.14",
+    "@types/node": "^20.16.0",
+    "@types/pg": "^8.11.10",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.18",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8",
+    "xlsx": "^0.18.5"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}
