@@ -1,0 +1,80 @@
+[
+  {
+    "ocid": "ocds-lcu-seace-2024-9876",
+    "cui_vinculado": "2345678",
+    "ruc_contratista": "20123456789",
+    "entidad_contratante": "MINISTERIO DE VIVIENDA CONSTRUCCION Y SANEAMIENTO",
+    "cantidad_postores": 1,
+    "monto_adjudicado": 4000000,
+    "monto_final_con_adendas": 5200000,
+    "modalidad": "Licitacion Publica",
+    "estado_contrato": "Resuelto",
+    "fecha_adjudicacion": "2024-03-10",
+    "fecha_firma_contrato": "2024-04-02"
+  },
+  {
+    "ocid": "ocds-lcu-seace-2024-4451",
+    "cui_vinculado": "146300",
+    "ruc_contratista": "20467890123",
+    "entidad_contratante": "MUNICIPALIDAD DISTRITAL DE PISCO",
+    "cantidad_postores": 3,
+    "monto_adjudicado": 180000,
+    "monto_final_con_adendas": 198400,
+    "modalidad": "Adjudicacion Simplificada",
+    "estado_contrato": "Resuelto",
+    "fecha_adjudicacion": "2024-09-15",
+    "fecha_firma_contrato": "2024-10-01"
+  },
+  {
+    "ocid": "ocds-lcu-seace-2025-1120",
+    "cui_vinculado": "108394",
+    "ruc_contratista": "20123456789",
+    "entidad_contratante": "MUNICIPALIDAD DE VILLA MARIA DEL TRIUNFO",
+    "cantidad_postores": 1,
+    "monto_adjudicado": 350000,
+    "monto_final_con_adendas": 372702,
+    "modalidad": "Adjudicacion Simplificada",
+    "estado_contrato": "Paralizado",
+    "fecha_adjudicacion": "2025-05-20",
+    "fecha_firma_contrato": "2025-06-05"
+  },
+  {
+    "ocid": "ocds-lcu-seace-2024-8830",
+    "cui_vinculado": "162486",
+    "ruc_contratista": "20511223344",
+    "entidad_contratante": "MUNICIPALIDAD PROVINCIAL DE HUARAZ",
+    "cantidad_postores": 2,
+    "monto_adjudicado": 2650000,
+    "monto_final_con_adendas": 2850000,
+    "modalidad": "Licitacion Publica",
+    "estado_contrato": "Paralizado",
+    "fecha_adjudicacion": "2024-11-08",
+    "fecha_firma_contrato": "2024-12-01"
+  },
+  {
+    "ocid": "ocds-lcu-seace-2023-6612",
+    "cui_vinculado": "115486",
+    "ruc_contratista": "20467890123",
+    "entidad_contratante": "MUNICIPALIDAD DISTRITAL DE YAUYOS",
+    "cantidad_postores": 4,
+    "monto_adjudicado": 9500,
+    "monto_final_con_adendas": 9999,
+    "modalidad": "Subasta Inversa",
+    "estado_contrato": "En ejecucion",
+    "fecha_adjudicacion": "2023-08-14",
+    "fecha_firma_contrato": "2023-09-01"
+  },
+  {
+    "ocid": "ocds-lcu-seace-2023-7733",
+    "cui_vinculado": "151449",
+    "ruc_contratista": "20511223344",
+    "entidad_contratante": "MINISTERIO DE SALUD",
+    "cantidad_postores": 5,
+    "monto_adjudicado": 987000,
+    "monto_final_con_adendas": 987000,
+    "modalidad": "Licitacion Publica",
+    "estado_contrato": "Conformidad",
+    "fecha_adjudicacion": "2023-04-10",
+    "fecha_firma_contrato": "2023-05-15"
+  }
+]

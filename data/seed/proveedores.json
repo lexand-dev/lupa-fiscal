@@ -1,0 +1,38 @@
+[
+  {
+    "ruc": "20123456789",
+    "razon_social": "Constructora Los Andes SAC",
+    "estado_rnp": "Vigente con Antecedentes",
+    "sanciones_tribunal_historicas": 2,
+    "inhabilitacion_vigente": false,
+    "multas_histricas_pen": 48500,
+    "penalidades_aplicadas": 1,
+    "fecha_ultima_sancion": "2024-09-30",
+    "descripcion_ultima_sancion": "Suspension 12 meses por entrega defectuosa (Res. 1234-2024-OSCE)",
+    "nro_adjudicaciones": 14
+  },
+  {
+    "ruc": "20467890123",
+    "razon_social": "Ingenieria Hidraulica del Pacifico SAC",
+    "estado_rnp": "Vigente",
+    "sanciones_tribunal_historicas": 0,
+    "inhabilitacion_vigente": false,
+    "multas_histricas_pen": 0,
+    "penalidades_aplicadas": 0,
+    "fecha_ultima_sancion": null,
+    "descripcion_ultima_sancion": null,
+    "nro_adjudicaciones": 27
+  },
+  {
+    "ruc": "20511223344",
+    "razon_social": "Construcciones y Servicios Ancash SAC",
+    "estado_rnp": "Inhabilitado",
+    "sanciones_tribunal_historicas": 4,
+    "inhabilitacion_vigente": true,
+    "multas_histricas_pen": 156000,
+    "penalidades_aplicadas": 3,
+    "fecha_ultima_sancion": "2025-12-15",
+    "descripcion_ultima_sancion": "Inhabilitacion 36 meses por abandono de obra + falsa declaracion (Res. 0987-2025-OSCE)",
+    "nro_adjudicaciones": 9
+  }
+]
