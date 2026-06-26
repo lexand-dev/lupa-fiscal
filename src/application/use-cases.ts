@@ -33,11 +33,12 @@ export async function listarRegiones(repo: ObrasRepository): Promise<RegionResum
 export async function buscarObras(
   repo: ObrasRepository,
   region: string,
+  categoria?: string | null,
 ): Promise<ObraEvaluada[]> {
   if (!region || !region.trim()) {
     throw new Error("Región requerida");
   }
-  const crudas = await repo.buscarPorRegion(region.trim());
+  const crudas = await repo.buscarPorRegion(region.trim(), categoria);
   return crudas
     .map(enriquecer)
     .sort((a, b) => b.evaluacion.puntaje - a.evaluacion.puntaje);

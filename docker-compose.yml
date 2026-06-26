@@ -1,0 +1,36 @@
+# Lupa Fiscal — stack completo: app Next.js + PostgreSQL
+# Uso:  docker compose up --build
+# App:  http://localhost:3100   ·   Postgres: localhost:5433
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: lupa
+      POSTGRES_PASSWORD: lupa
+      POSTGRES_DB: lupa
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lupa -d lupa"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+  app:
+    build: .
+    environment:
+      # sslmode=disable: el Postgres del compose no tiene SSL (a diferencia de Supabase/Neon)
+      DATABASE_URL: "postgres://lupa:lupa@db:5432/lupa?sslmode=disable"
+      AUTH_SECRET: "lupa-fiscal-dev-auth-secret-cambiar-en-produccion-2026"
+      CAPTCHA_BYPASS_TOKEN: "dev-captcha-ok"
+      NODE_ENV: "production"
+    ports:
+      - "3100:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

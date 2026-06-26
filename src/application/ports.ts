@@ -32,6 +32,12 @@ export interface ObraEvaluada extends ObraConContexto {
 /** Puerto de persistencia. Lo implementan los adaptadores en infrastructure/. */
 export interface ObrasRepository {
   listarRegiones(): Promise<RegionResumen[]>;
-  buscarPorRegion(region: string): Promise<ObraConContexto[]>;
+  buscarPorRegion(region: string, categoria?: string | null): Promise<ObraConContexto[]>;
   obtenerObra(id: string): Promise<ObraConContexto | null>;
+  /**
+   * Todas las obras (con su contexto) cuyo contrato fue adjudicado al proveedor
+   * con el RUC dado. Permite ver el "patrón" de un mismo proveedor a través de
+   * varias entidades/regiones (capa de búsqueda por proveedor).
+   */
+  buscarContratosPorRuc(ruc: string): Promise<ObraConContexto[]>;
 }

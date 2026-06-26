@@ -22,6 +22,7 @@ function mapRow(row: Row): ObraConContexto {
     ? {
         id: row.c_id,
         ocid: row.c_ocid,
+        cui: row.c_cui ?? null,
         valorReferencial: num(row.c_valor_referencial),
         montoAdjudicado: num(row.c_monto_adjudicado),
         numPostores: num(row.c_num_postores),
@@ -46,6 +47,7 @@ function mapRow(row: Row): ObraConContexto {
       estado: row.o_estado as EstadoObra,
       mesesParada: num(row.o_meses_parada),
       avanceFisico: num(row.o_avance_fisico),
+      categoria: row.o_categoria ?? null,
       lat: num(row.o_lat),
       lng: num(row.o_lng),
       entidadId: row.o_entidad_id,
@@ -67,10 +69,10 @@ const SELECT_OBRA = `
   SELECT
     o.id o_id, o.nombre o_nombre, o.monto_inversion o_monto_inversion,
     o.estado o_estado, o.meses_parada o_meses_parada, o.avance_fisico o_avance_fisico,
-    o.lat o_lat, o.lng o_lng, o.entidad_id o_entidad_id, o.contrato_id o_contrato_id,
+    o.categoria o_categoria, o.lat o_lat, o.lng o_lng, o.entidad_id o_entidad_id, o.contrato_id o_contrato_id,
     e.id e_id, e.nombre e_nombre, e.nivel_gobierno e_nivel_gobierno,
     e.region e_region, e.ubigeo e_ubigeo,
-    c.id c_id, c.ocid c_ocid, c.valor_referencial c_valor_referencial,
+    c.id c_id, c.ocid c_ocid, c.cui c_cui, c.valor_referencial c_valor_referencial,
     c.monto_adjudicado c_monto_adjudicado, c.num_postores c_num_postores,
     c.entidad_id c_entidad_id, c.proveedor_id c_proveedor_id,
     p.id p_id, p.ruc p_ruc, p.razon_social p_razon_social,
@@ -100,16 +102,31 @@ export class PgObrasRepository implements ObrasRepository {
     }));
   }
 
-  async buscarPorRegion(region: string): Promise<ObraConContexto[]> {
-    const { rows } = await getPool().query(
-      `${SELECT_OBRA} WHERE e.region = $1`,
-      [region],
-    );
+  async buscarPorRegion(region: string, categoria?: string | null): Promise<ObraConContexto[]> {
+    const params: unknown[] = [region];
+    let sql = `${SELECT_OBRA} WHERE e.region = $1`;
+    if (categoria) {
+      params.push(categoria);
+      sql += ` AND o.categoria = $2`;
+    }
+    sql += ` ORDER BY o.monto_inversion DESC NULLS LAST LIMIT 300`;
+    const { rows } = await getPool().query(sql, params);
     return rows.map(mapRow);
   }
 
   async obtenerObra(id: string): Promise<ObraConContexto | null> {
     const { rows } = await getPool().query(`${SELECT_OBRA} WHERE o.id = $1`, [id]);
     return rows.length ? mapRow(rows[0]) : null;
+  }
+
+  async buscarContratosPorRuc(ruc: string): Promise<ObraConContexto[]> {
+    // Las obras cuyo contrato fue adjudicado al proveedor con ese RUC.
+    // El LEFT JOIN a proveedor deja p.ruc NULL en obras sin proveedor, así que
+    // el filtro por p.ruc descarta correctamente esas filas.
+    const { rows } = await getPool().query(
+      `${SELECT_OBRA} WHERE p.ruc = $1`,
+      [ruc],
+    );
+    return rows.map(mapRow);
   }
 }

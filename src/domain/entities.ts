@@ -39,6 +39,8 @@ export interface Contrato {
   id: string;
   /** Open Contracting ID. */
   ocid: string;
+  /** Código Único de Inversiones (CUI/SNIP). Llave para cruzar con INFOBRAS. */
+  cui: string | null;
   valorReferencial: number | null;
   montoAdjudicado: number | null;
   numPostores: number | null;
@@ -56,6 +58,8 @@ export interface Obra {
   mesesParada: number | null;
   /** Avance físico 0..100 (%). */
   avanceFisico: number | null;
+  /** Categoría OCDS: "works" (obra) | "goods" | "services". */
+  categoria: string | null;
   lat: number | null;
   lng: number | null;
   entidadId: string;

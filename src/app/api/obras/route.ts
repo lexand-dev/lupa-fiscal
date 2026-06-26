@@ -7,11 +7,12 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   const region = req.nextUrl.searchParams.get("region");
+  const categoria = req.nextUrl.searchParams.get("categoria");
   if (!region) {
     return NextResponse.json({ error: "Parámetro 'region' requerido" }, { status: 400 });
   }
   try {
-    const obras = await buscarObras(getObrasRepository(), region);
+    const obras = await buscarObras(getObrasRepository(), region, categoria);
     return NextResponse.json({ region, total: obras.length, obras });
   } catch (err) {
     console.error("[/api/obras]", err);

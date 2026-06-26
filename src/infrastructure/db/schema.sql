@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS proveedor (
 CREATE TABLE IF NOT EXISTS contrato (
   id                TEXT PRIMARY KEY,
   ocid              TEXT,
+  cui               TEXT,
   valor_referencial NUMERIC,
   monto_adjudicado  NUMERIC,
   num_postores      INTEGER,
@@ -35,13 +36,20 @@ CREATE TABLE IF NOT EXISTS obra (
   estado         TEXT NOT NULL CHECK (estado IN ('paralizada','en_ejecucion','concluida','desconocido')),
   meses_parada   INTEGER,
   avance_fisico  NUMERIC,
+  categoria      TEXT,
   lat            DOUBLE PRECISION,
   lng            DOUBLE PRECISION,
   entidad_id     TEXT REFERENCES entidad(id),
   contrato_id    TEXT REFERENCES contrato(id)
 );
 
+-- Columnas añadidas (idempotente, para bases ya creadas)
+ALTER TABLE contrato ADD COLUMN IF NOT EXISTS cui TEXT;
+ALTER TABLE obra     ADD COLUMN IF NOT EXISTS categoria TEXT;
+
 CREATE INDEX IF NOT EXISTS idx_entidad_region ON entidad(region);
 CREATE INDEX IF NOT EXISTS idx_obra_estado    ON obra(estado);
 CREATE INDEX IF NOT EXISTS idx_obra_entidad   ON obra(entidad_id);
+CREATE INDEX IF NOT EXISTS idx_obra_categoria ON obra(categoria);
 CREATE INDEX IF NOT EXISTS idx_contrato_prov  ON contrato(proveedor_id);
+CREATE INDEX IF NOT EXISTS idx_contrato_cui   ON contrato(cui);

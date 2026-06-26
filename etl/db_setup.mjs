@@ -21,15 +21,24 @@ async function main() {
     process.exit(1);
   }
   const isLocal = /localhost|127\.0\.0\.1/.test(connectionString);
+  const noSsl = isLocal || /sslmode=disable/i.test(connectionString);
   const client = new pg.Client({
     connectionString,
-    ssl: isLocal ? false : { rejectUnauthorized: false },
+    ssl: noSsl ? false : { rejectUnauthorized: false },
   });
   await client.connect();
 
   const schema = fs.readFileSync(path.join(root, "src", "infrastructure", "db", "schema.sql"), "utf8");
   await client.query(schema);
   console.log("✓ esquema aplicado");
+
+  // Guarda: si ya hay data real cargada (ETL OCDS), NO sembrar el demo encima.
+  const { rows: cnt } = await client.query("SELECT count(*)::int AS n FROM obra");
+  if (cnt[0].n > 100) {
+    console.log(`> ${cnt[0].n} obras ya cargadas (data real) — se omite el seed demo.`);
+    await client.end();
+    return;
+  }
 
   const seed = JSON.parse(fs.readFileSync(path.join(root, "data", "seed.json"), "utf8"));
 

@@ -4,10 +4,17 @@ import { useEffect, useRef } from "react";
 import type { ObraEvaluada } from "@/application/ports";
 
 const COLOR: Record<string, string> = {
-  alto: "#dc2626",
-  medio: "#f59e0b",
-  bajo: "#16a34a",
+  alto: "#d24026",
+  medio: "#b4530a",
+  bajo: "#15514a",
 };
+
+/** Radio del marcador por monto (escala sqrt, acotado). */
+function radio(monto: number | null, min: number, max: number): number {
+  if (monto == null || max <= min) return 7;
+  const t = (Math.sqrt(monto) - Math.sqrt(min)) / (Math.sqrt(max) - Math.sqrt(min));
+  return 6 + Math.max(0, Math.min(1, t)) * 16;
+}
 
 export default function MapaObras({
   obras,
@@ -56,17 +63,20 @@ export default function MapaObras({
     const layer = layerRef.current;
     if (!L || !map || !layer) return;
     layer.clearLayers();
+    const montos = obras.map((o) => o.obra.montoInversion ?? 0);
+    const min = montos.length ? Math.min(...montos) : 0;
+    const max = montos.length ? Math.max(...montos) : 0;
     const pts: [number, number][] = [];
     for (const o of obras) {
       const { lat, lng } = o.obra;
       if (lat == null || lng == null) continue;
       const color = COLOR[o.evaluacion.nivel] ?? COLOR.bajo;
       const marker = L.circleMarker([lat, lng], {
-        radius: 9,
+        radius: radio(o.obra.montoInversion, min, max),
         color,
         fillColor: color,
-        fillOpacity: 0.75,
-        weight: 2,
+        fillOpacity: 0.45,
+        weight: 1,
       });
       marker.bindPopup(
         `<b>${o.obra.nombre}</b><br/>${o.entidad.nombre}<br/>` +
