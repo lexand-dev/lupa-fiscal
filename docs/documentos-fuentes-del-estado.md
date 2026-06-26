@@ -17,7 +17,7 @@ Este documento enumera los archivos/fuentes que se usarán para alimentar la dem
 ## 2. Sancionados / Inhabilitados
 
 **Documento / archivo:** `sancionados.csv`  
-**Link:** `https://bi.seace.gob.pe/pentaho/api/repos/%3Apublic%3Aportal%3Adataset.html/content?userid=public&password=key&pagina=penalidades`  
+**Link:** https://drive.google.com/file/d/1m58RJIsp7TJPDEiqpF3b4Yx6BJ5fo2Xz/view?usp=sharing
 **Uso en la web app:** bandera de sanción vigente o histórica.  
 **Descripción:** listado de proveedores sancionados o inhabilitados para contratar con el Estado. Incluye RUC, razón social, fechas de sanción, resolución y motivo de infracción.  
 **Importancia:** es la bandera más fuerte para el perfil de riesgo del proveedor.
@@ -27,7 +27,7 @@ Este documento enumera los archivos/fuentes que se usarán para alimentar la dem
 ## 3. Sancionados con multa
 
 **Documento / archivo:** `sancionados_multa.csv`  
-**Link:** `https://bi.seace.gob.pe/pentaho/api/repos/%3Apublic%3Aportal%3Adataset.html/content?userid=public&password=key&pagina=penalidades`  
+**Link:** https://drive.google.com/file/d/1kQskmbWGONlE5EWfh1pR794S-IxxCD0I/view?usp=sharing  
 **Uso en la web app:** bandera complementaria de multas.  
 **Descripción:** listado de proveedores sancionados con multa. Incluye RUC, razón social, fechas, resolución, motivo y monto de la multa.  
 **Importancia:** ayuda a enriquecer el perfil de riesgo del proveedor con antecedentes económicos sancionatorios.
@@ -37,7 +37,7 @@ Este documento enumera los archivos/fuentes que se usarán para alimentar la dem
 ## 4. Inhabilitaciones judiciales
 
 **Documento / archivo:** `inhabilitaciones_judiciales.csv`  
-**Link:** `https://bi.seace.gob.pe/pentaho/api/repos/%3Apublic%3Aportal%3Adataset.html/content?userid=public&password=key&pagina=penalidades`  
+**Link:** https://drive.google.com/file/d/1QpIlPBVuTz4i2p1TzQzGPQRuI5l3m2gS/view?usp=sharing
 **Uso en la web app:** bandera de inhabilitación por mandato judicial.  
 **Descripción:** registro de proveedores o personas inhabilitadas por decisión judicial. Incluye RUC/DNI, razón social o nombre, órgano jurisdiccional, resolución y fechas de inicio/fin.  
 **Importancia:** útil como señal fuerte de riesgo legal o de cumplimiento.
@@ -47,7 +47,7 @@ Este documento enumera los archivos/fuentes que se usarán para alimentar la dem
 ## 5. Penalidades contractuales
 
 **Documento / archivo:** `penalidades.csv`  
-**Link:** `https://bi.seace.gob.pe/pentaho/api/repos/%3Apublic%3Aportal%3Adataset.html/content?userid=public&password=key&pagina=penalidades`  
+**Link:** https://drive.google.com/file/d/1PYWOVH_u5uTZfCWpXWNvHVg0YfFFO7gX/view?usp=sharing 
 **Uso en la web app:** bandera de penalidades en contratos.  
 **Descripción:** listado de penalidades aplicadas a contratistas. Incluye ID de contrato, RUC del contratista, tipo de penalidad, entidad contratante, fecha, motivo y monto.  
 **Importancia:** permite detectar antecedentes de problemas de ejecución o cumplimiento contractual.
@@ -57,7 +57,7 @@ Este documento enumera los archivos/fuentes que se usarán para alimentar la dem
 ## 6. Penalidades históricas 2018
 
 **Documento / archivo:** `penalidades2018.csv`  
-**Link:** `https://bi.seace.gob.pe/pentaho/api/repos/%3Apublic%3Aportal%3Adataset.html/content?userid=public&password=key&pagina=penalidades`  
+**Link:** https://drive.google.com/file/d/1ICW-hdcRXxxMnZpoNOj5Mqx4KTd9op_P/view?usp=sharing  
 **Uso en la web app:** histórico adicional de penalidades.  
 **Descripción:** archivo histórico de penalidades contractuales con estructura similar a `penalidades.csv`.  
 **Importancia:** recomendable para enriquecer la demo con historial adicional, siempre que se deduplique correctamente con otros archivos de penalidades.
