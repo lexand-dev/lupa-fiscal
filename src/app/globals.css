@@ -1,0 +1,249 @@
+:root {
+  --bg: #f1f5f9;
+  --ink: #0f172a;
+  --ink-soft: #475569;
+  --navy: #1e293b;
+  --accent: #e8743b;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --alto: #dc2626;
+  --medio: #f59e0b;
+  --bajo: #16a34a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+header.site {
+  background: var(--navy);
+  color: #fff;
+  padding: 20px 24px;
+  border-bottom: 4px solid var(--accent);
+}
+header.site h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+}
+header.site p {
+  margin: 4px 0 0;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 24px 48px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+.controls label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+.controls select {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  min-width: 240px;
+}
+
+.stats {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  flex: 1 1 180px;
+}
+.stat .num {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.stat .num.accent {
+  color: var(--accent);
+}
+.stat .lbl {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+#mapa {
+  height: 560px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  z-index: 0;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 560px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--bajo);
+  border-radius: 10px;
+  padding: 16px;
+}
+.card.alto {
+  border-left-color: var(--alto);
+}
+.card.medio {
+  border-left-color: var(--medio);
+}
+.card.bajo {
+  border-left-color: var(--bajo);
+}
+.card h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+}
+.card .meta {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+.card .montos {
+  display: flex;
+  gap: 18px;
+  font-size: 0.86rem;
+  margin-bottom: 10px;
+}
+.card .montos b {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+}
+.badge.alto {
+  background: var(--alto);
+}
+.badge.medio {
+  background: var(--medio);
+}
+.badge.bajo {
+  background: var(--bajo);
+}
+
+.banderas {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.banderas li {
+  font-size: 0.84rem;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+.banderas li .peso {
+  float: right;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.avance {
+  height: 7px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.avance > span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+details.accion {
+  margin-top: 12px;
+}
+details.accion summary {
+  cursor: pointer;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+details.accion textarea {
+  width: 100%;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  min-height: 130px;
+  font-family: inherit;
+}
+
+.fuente-nota {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+.empty {
+  color: var(--ink-soft);
+  padding: 40px 0;
+  text-align: center;
+}

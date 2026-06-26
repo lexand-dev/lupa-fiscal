@@ -1,0 +1,55 @@
+{
+  "_meta": "Datos de demostración de Lupa Fiscal. Cifras inspiradas en el panorama real (Contraloría/INFOBRAS: +2,700 obras paralizadas, S/ 67,139 M congelados). Reemplazables por la ETL real de OCDS+INFOBRAS.",
+  "entidades": [
+    { "id": "E-CUS-1", "nombre": "Municipalidad Provincial de Cusco", "nivelGobierno": "local", "region": "Cusco", "ubigeo": "080101" },
+    { "id": "E-CUS-2", "nombre": "Gobierno Regional de Cusco", "nivelGobierno": "regional", "region": "Cusco", "ubigeo": "080000" },
+    { "id": "E-PUN-1", "nombre": "Municipalidad Provincial de Puno", "nivelGobierno": "local", "region": "Puno", "ubigeo": "210101" },
+    { "id": "E-PUN-2", "nombre": "Gobierno Regional de Puno", "nivelGobierno": "regional", "region": "Puno", "ubigeo": "210000" },
+    { "id": "E-ANC-1", "nombre": "Gobierno Regional de Áncash", "nivelGobierno": "regional", "region": "Áncash", "ubigeo": "020000" },
+    { "id": "E-LIM-1", "nombre": "Municipalidad Metropolitana de Lima", "nivelGobierno": "local", "region": "Lima", "ubigeo": "150101" },
+    { "id": "E-ARE-1", "nombre": "Gobierno Regional de Arequipa", "nivelGobierno": "regional", "region": "Arequipa", "ubigeo": "040000" },
+    { "id": "E-CAJ-1", "nombre": "Municipalidad Provincial de Cajamarca", "nivelGobierno": "local", "region": "Cajamarca", "ubigeo": "060101" },
+    { "id": "E-LAL-1", "nombre": "Gobierno Regional de La Libertad", "nivelGobierno": "regional", "region": "La Libertad", "ubigeo": "130000" }
+  ],
+  "proveedores": [
+    { "id": "P-1", "ruc": "20100111222", "razonSocial": "Constructora Andina S.A.C.", "sancionado": false, "numAdjudicaciones": 5 },
+    { "id": "P-2", "ruc": "20200333444", "razonSocial": "Consorcio Vial del Sur", "sancionado": true, "numAdjudicaciones": 2 },
+    { "id": "P-3", "ruc": "20300555666", "razonSocial": "Edificaciones del Norte E.I.R.L.", "sancionado": false, "numAdjudicaciones": 1 },
+    { "id": "P-4", "ruc": "20400777888", "razonSocial": "Ingeniería y Obras Perú S.A.", "sancionado": false, "numAdjudicaciones": 4 },
+    { "id": "P-5", "ruc": "20500999000", "razonSocial": "Constructora Litoral S.A.C.", "sancionado": true, "numAdjudicaciones": 3 },
+    { "id": "P-6", "ruc": "20600121212", "razonSocial": "Servicios Generales JR S.A.C.", "sancionado": false, "numAdjudicaciones": 1 },
+    { "id": "P-7", "ruc": "20700343434", "razonSocial": "Grupo Constructor Inka S.A.C.", "sancionado": false, "numAdjudicaciones": 2 }
+  ],
+  "contratos": [
+    { "id": "C-01", "ocid": "ocds-pe-cus-0001", "valorReferencial": 40000000, "montoAdjudicado": 56000000, "numPostores": 1, "entidadId": "E-CUS-2", "proveedorId": "P-1" },
+    { "id": "C-02", "ocid": "ocds-pe-cus-0002", "valorReferencial": 12000000, "montoAdjudicado": 13000000, "numPostores": 3, "entidadId": "E-CUS-1", "proveedorId": "P-3" },
+    { "id": "C-03", "ocid": "ocds-pe-pun-0003", "valorReferencial": 70000000, "montoAdjudicado": 95000000, "numPostores": 1, "entidadId": "E-PUN-2", "proveedorId": "P-2" },
+    { "id": "C-04", "ocid": "ocds-pe-pun-0004", "valorReferencial": 23000000, "montoAdjudicado": 24000000, "numPostores": 4, "entidadId": "E-PUN-1", "proveedorId": "P-6" },
+    { "id": "C-05", "ocid": "ocds-pe-anc-0005", "valorReferencial": 28000000, "montoAdjudicado": 33000000, "numPostores": 2, "entidadId": "E-ANC-1", "proveedorId": "P-4" },
+    { "id": "C-06", "ocid": "ocds-pe-anc-0006", "valorReferencial": 8000000, "montoAdjudicado": 8000000, "numPostores": 5, "entidadId": "E-ANC-1", "proveedorId": "P-6" },
+    { "id": "C-07", "ocid": "ocds-pe-lim-0007", "valorReferencial": 15000000, "montoAdjudicado": 19500000, "numPostores": 1, "entidadId": "E-LIM-1", "proveedorId": "P-5" },
+    { "id": "C-08", "ocid": "ocds-pe-lim-0008", "valorReferencial": 3000000, "montoAdjudicado": 3050000, "numPostores": 4, "entidadId": "E-LIM-1", "proveedorId": "P-3" },
+    { "id": "C-09", "ocid": "ocds-pe-are-0009", "valorReferencial": 45000000, "montoAdjudicado": 60000000, "numPostores": 1, "entidadId": "E-ARE-1", "proveedorId": "P-1" },
+    { "id": "C-10", "ocid": "ocds-pe-are-0010", "valorReferencial": 5000000, "montoAdjudicado": 5200000, "numPostores": 3, "entidadId": "E-ARE-1", "proveedorId": "P-3" },
+    { "id": "C-11", "ocid": "ocds-pe-caj-0011", "valorReferencial": 12000000, "montoAdjudicado": 16000000, "numPostores": 2, "entidadId": "E-CAJ-1", "proveedorId": "P-7" },
+    { "id": "C-12", "ocid": "ocds-pe-caj-0012", "valorReferencial": 9000000, "montoAdjudicado": 9500000, "numPostores": 1, "entidadId": "E-CAJ-1", "proveedorId": "P-6" },
+    { "id": "C-13", "ocid": "ocds-pe-lal-0013", "valorReferencial": 22000000, "montoAdjudicado": 30000000, "numPostores": 1, "entidadId": "E-LAL-1", "proveedorId": "P-2" },
+    { "id": "C-14", "ocid": "ocds-pe-lal-0014", "valorReferencial": 100000000, "montoAdjudicado": 138000000, "numPostores": 1, "entidadId": "E-LAL-1", "proveedorId": "P-4" }
+  ],
+  "obras": [
+    { "id": "O-01", "nombre": "Hospital regional del Cusco (nueva torre)", "montoInversion": 45000000, "estado": "paralizada", "mesesParada": 28, "avanceFisico": 75, "lat": -13.5226, "lng": -71.9673, "entidadId": "E-CUS-2", "contratoId": "C-01" },
+    { "id": "O-02", "nombre": "Colegio emblemático San Antonio", "montoInversion": 12000000, "estado": "paralizada", "mesesParada": 14, "avanceFisico": 60, "lat": -13.5350, "lng": -71.9510, "entidadId": "E-CUS-1", "contratoId": "C-02" },
+    { "id": "O-03", "nombre": "Carretera Puno–Desaguadero (tramo II)", "montoInversion": 89000000, "estado": "paralizada", "mesesParada": 36, "avanceFisico": 82, "lat": -15.8402, "lng": -70.0219, "entidadId": "E-PUN-2", "contratoId": "C-03" },
+    { "id": "O-04", "nombre": "Planta de saneamiento Puno norte", "montoInversion": 23000000, "estado": "paralizada", "mesesParada": 9, "avanceFisico": 40, "lat": -15.8550, "lng": -70.0290, "entidadId": "E-PUN-1", "contratoId": "C-04" },
+    { "id": "O-05", "nombre": "Puente carrozable río Santa", "montoInversion": 31000000, "estado": "paralizada", "mesesParada": 20, "avanceFisico": 90, "lat": -9.5278, "lng": -77.5285, "entidadId": "E-ANC-1", "contratoId": "C-05" },
+    { "id": "O-06", "nombre": "Defensa ribereña Huaraz", "montoInversion": 8000000, "estado": "en_ejecucion", "mesesParada": 0, "avanceFisico": 35, "lat": -9.5400, "lng": -77.5200, "entidadId": "E-ANC-1", "contratoId": "C-06" },
+    { "id": "O-07", "nombre": "Mercado mayorista Lima este", "montoInversion": 18000000, "estado": "paralizada", "mesesParada": 10, "avanceFisico": 55, "lat": -12.0464, "lng": -77.0428, "entidadId": "E-LIM-1", "contratoId": "C-07" },
+    { "id": "O-08", "nombre": "Parque zonal Villa Lima", "montoInversion": 3000000, "estado": "concluida", "mesesParada": 0, "avanceFisico": 100, "lat": -12.0600, "lng": -77.0500, "entidadId": "E-LIM-1", "contratoId": "C-08" },
+    { "id": "O-09", "nombre": "Planta de tratamiento de agua Arequipa", "montoInversion": 52000000, "estado": "paralizada", "mesesParada": 24, "avanceFisico": 68, "lat": -16.4090, "lng": -71.5375, "entidadId": "E-ARE-1", "contratoId": "C-09" },
+    { "id": "O-10", "nombre": "Posta médica Cayma", "montoInversion": 5000000, "estado": "paralizada", "mesesParada": 7, "avanceFisico": 52, "lat": -16.3760, "lng": -71.5490, "entidadId": "E-ARE-1", "contratoId": "C-10" },
+    { "id": "O-11", "nombre": "I.E. 80001 Cajamarca (reconstrucción)", "montoInversion": 14000000, "estado": "paralizada", "mesesParada": 30, "avanceFisico": 78, "lat": -7.1638, "lng": -78.5003, "entidadId": "E-CAJ-1", "contratoId": "C-11" },
+    { "id": "O-12", "nombre": "Reservorio de agua El Tambo", "montoInversion": 9000000, "estado": "paralizada", "mesesParada": 16, "avanceFisico": 35, "lat": -7.1700, "lng": -78.5150, "entidadId": "E-CAJ-1", "contratoId": "C-12" },
+    { "id": "O-13", "nombre": "Carretera vecinal Otuzco–Salpo", "montoInversion": 27000000, "estado": "paralizada", "mesesParada": 22, "avanceFisico": 85, "lat": -8.1090, "lng": -79.0215, "entidadId": "E-LAL-1", "contratoId": "C-13" },
+    { "id": "O-14", "nombre": "Hospital II La Libertad (Trujillo)", "montoInversion": 120000000, "estado": "paralizada", "mesesParada": 40, "avanceFisico": 65, "lat": -8.1150, "lng": -79.0290, "entidadId": "E-LAL-1", "contratoId": "C-14" }
+  ]
+}
