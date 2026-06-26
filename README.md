@@ -1,18 +1,16 @@
 # Lupa Fiscal - Builders For The Win
 
-Plataforma cívica que permite a cualquier ciudadano buscar su región y ver las obras públicas paralizadas cerca,
-cuánta inversión está congelada y qué señales de riesgo tiene el contrato que las financió.
-Radar ciudadano de obras públicas paralizadas y señales de riesgo en sus contrataciones.
+Plataforma de señales de riesgo sobre datos abiertos del Estado: un mismo motor, tres públicos.
 
 ## Problemática y usuario
 
-**Problema.** A inicios de 2026 hay más de 2,700 obras públicas paralizadas en el Perú, con más de S/ 67,139 millones de inversión congelada (Contraloría / INFOBRAS). El dato existe, pero está disperso y es ilegible para el ciudadano de a pie: no hay forma simple de ver "qué obra cerca de mí está parada, por qué, y quién responde".
+**Problema.** A inicios de 2026 hay más de 2,700 obras públicas paralizadas en el Perú, con más de S/ 67,139 millones de inversión congelada (Contraloría / INFOBRAS). El dato existe, pero está disperso y es ilegible: no hay forma simple de ver "qué obra cerca de mí está parada, por qué, y quién responde".
 
-**Usuario.**
+**Usuarios.**
 
-- Ciudadano y vecino (vigilancia cívica)
-- Periodista local (leads de investigación)
-- Regidor y veedurías (priorización de obras reactivables y contratos con riesgo)
+- **Ciudadano — vigilancia.** Busca tu región y ve las obras públicas paralizadas cerca, cuánta inversión está congelada y qué banderas de riesgo tiene el contrato que las financió. De la indignación a la denuncia.
+- **Entidad pública — contratación responsable.** Antes de adjudicar, busca un proveedor por RUC y ve su perfil de riesgo: sanciones e inhabilitaciones, historial de postor único, sobrecostos, concentración con una sola entidad y obras paralizadas asociadas.
+- **Empresa privada — debida diligencia (Ley 30424).** La misma consulta por RUC que la ley anticorrupción obliga a hacer sobre proveedores, clientes y socios de negocio. El semáforo de integridad en compra pública de tu contraparte, en segundos.
 
 ## Stack tecnológico
 
@@ -30,7 +28,7 @@ Radar ciudadano de obras públicas paralizadas y señales de riesgo en sus contr
 
 ```bash
 # 1. Clonar e instalar
-git clone [url-del-repo] && cd lupa-fiscal
+git clone https://github.com/lexand-dev/lupa-fiscal.git && cd lupa-fiscal
 npm install
 
 # 2. Variables de entorno
@@ -70,4 +68,4 @@ Se usa IA generativa como **copiloto de ingeniería**, no como caja negra: para 
 - Diagramas de arquitectura → [./docs/architecture.md](./docs/architecture.md)
 - Decisiones de arquitectura → [./docs/adr/](./docs/adr/)
 - Fuentes y endpoints de datos → [./docs/datos.md](./docs/datos.md)
-- Repositorio: [https://github.com/lexand-dev/lupa-fiscal] · URL de producción: [url]
+- Repositorio: https://github.com/lexand-dev/lupa-fiscal · URL de producción: [pending — Vercel]
